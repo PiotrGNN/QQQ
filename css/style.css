@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Fira Sans", "Roboto", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    background-image: linear-gradient(120deg, #f0f0f0 0%, #ffffff 100%);
+}
+
+body.dark {
+    color: #eee;
+    background-color: #1e1e1e;
+    background-image: none;
+}
+
+header {
+    background: linear-gradient(135deg, #3f87a6, #2b5876);
+    color: #fff;
+    padding: 2em 1em;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+body.dark header {
+    background: linear-gradient(135deg, #1e3c52, #111);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    position: absolute;
+    top: 1.2em;
+    right: 1em;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #2b5876;
+        margin: 1em 0 0 0;
+        padding: 1em 0;
+    }
+
+    nav.open ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark nav a {
+    color: #fff;
+}
+
+body.dark nav ul {
+    background: #111;
+}
+
+body.dark footer {
+    background: #111;
+    color: #bbb;
+}
+
+body.dark footer a {
+    color: #bbb;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+nav a.active {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+main {
+    padding: 2em 1em;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+body.dark section {
+    background: #1f1f1f;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+footer {
+    background: #222;
+    color: #ddd;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+footer a {
+    color: #ddd;
+    margin: 0 0.5em;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+#loginBtn {
+    background: #ffdd57;
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+body.dark #loginBtn {
+    background: #5a5a00;
+    color: #fff;
+}
+
+body.dark #loginBtn:hover {
+    background: #6f6f00;
+}
+
+#loginBtn:hover {
+    background: #ffe680;
+}
+
+#loginOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+body.dark #loginOverlay {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#loginOverlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+#loginOverlay form {
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark #loginOverlay form {
+    background: #2a2a2a;
+    color: #eee;
+}
+
+.editable {
+    border: 2px dashed #ffdd57;
+    padding: 0.5em;
+}
+
+.hero {
+    background: linear-gradient(135deg, #3f87a6, #203a43), url("https://via.placeholder.com/1200x600?text=Krzysztof+Daukszewicz");
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 7em 1em;
+    margin-bottom: 2em;
+    position: relative;
+    overflow: hidden;
+}
+
+body.dark .hero {
+    background: linear-gradient(135deg, #102733, #000), url("https://via.placeholder.com/1200x600/000000/ffffff?text=Krzysztof+Daukszewicz");
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at bottom right, rgba(63,135,166,0.6), transparent);
+    animation: heroPulse 6s infinite alternate;
+}
+
+body.dark .hero::after {
+    background: radial-gradient(circle at bottom right, rgba(16,39,51,0.6), transparent);
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 2.5em;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heroPulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Krzysztof Daukszewicz - Kontakt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Krzysztof Daukszewicz</h1>
+        <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+        <button id="themeToggle" aria-label="Przełącz motyw">🌙</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="o-artyscie.html">O artyście</a></li>
+                <li><a href="wystepy.html">Występy</a></li>
+                <li><a href="tworczosc.html">Twórczość</a></li>
+                <li><a href="multimedia.html">Multimedia</a></li>
+                <li><a href="cytaty.html">Cytaty</a></li>
+                <li><a href="daukszopedia.html">Daukszopedia</a></li>
+                <li><a href="blog.html">Kącik Satyryka</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                <li><a href="materialy.html">Materiały prasowe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="kontakt" contenteditable="false">
+            <h2>Kontakt</h2>
+            <form id="contact-form">
+                <label>Imię: <input type="text" name="name"></label><br>
+                <label>Email: <input type="email" name="email"></label><br>
+                <label>Wiadomość:<br><textarea name="message"></textarea></label><br>
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="mapa">
+            <a href="index.html">Strona główna</a> |
+            <a href="o-artyscie.html">O artyście</a> |
+            <a href="wystepy.html">Występy</a> |
+            <a href="tworczosc.html">Twórczość</a> |
+            <a href="multimedia.html">Multimedia</a> |
+            <a href="cytaty.html">Cytaty</a> |
+            <a href="daukszopedia.html">Daukszopedia</a> |
+            <a href="blog.html">Kącik Satyryka</a> |
+            <a href="kontakt.html">Kontakt</a> |
+            <a href="materialy.html">Materiały prasowe</a>
+        </div>
+        <button id="loginBtn" aria-label="Panel edycji">Zaloguj</button>
+    </footer>
+</body>
+</html>
