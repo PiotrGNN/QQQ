@@ -217,7 +217,7 @@ body.dark #loginOverlay form {
 }
 
 .hero {
-    background: linear-gradient(135deg, #3f87a6, #203a43), url("https://via.placeholder.com/1200x600?text=Krzysztof+Daukszewicz");
+    background: linear-gradient(135deg, #3f87a6, #203a43), url("https://upload.wikimedia.org/wikipedia/commons/6/68/Krzysztof_Daukszewicz_2011.jpg");
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -229,7 +229,7 @@ body.dark #loginOverlay form {
 }
 
 body.dark .hero {
-    background: linear-gradient(135deg, #102733, #000), url("https://via.placeholder.com/1200x600/000000/ffffff?text=Krzysztof+Daukszewicz");
+    background: linear-gradient(135deg, #102733, #000), url("https://upload.wikimedia.org/wikipedia/commons/6/68/Krzysztof_Daukszewicz_2011.jpg");
 }
 
 .hero::after {
