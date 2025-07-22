@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
         loginBtn.addEventListener('click', toggleLogin);
     }
     createLoginOverlay();
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    }
     if (localStorage.getItem('loggedIn')) {
         enableEditing();
     }
@@ -23,6 +30,7 @@ function createLoginOverlay() {
         const pass = document.getElementById('password').value;
         if (pass === 'dauksz') {
             localStorage.setItem('loggedIn', '1');
+            overlay.classList.remove('active');
             overlay.style.display = 'none';
             enableEditing();
         } else {
@@ -38,6 +46,7 @@ function toggleLogin() {
         window.location.reload();
     } else {
         overlay.style.display = 'flex';
+        requestAnimationFrame(() => overlay.classList.add('active'));
     }
 }
 

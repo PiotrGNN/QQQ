@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
 body {
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Fira Sans", "Roboto", Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -13,11 +15,24 @@ header {
     color: #fff;
     padding: 2em 1em;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2em;
+    position: absolute;
+    top: 1.2em;
+    right: 1em;
+    cursor: pointer;
 }
 
 nav ul {
@@ -28,6 +43,24 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1em;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #2b5876;
+        margin: 1em 0 0 0;
+        padding: 1em 0;
+    }
+
+    nav.open ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 nav li {
@@ -99,6 +132,13 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#loginOverlay.active {
+    display: flex;
+    opacity: 1;
 }
 
 #loginOverlay form {
@@ -119,9 +159,22 @@ footer a:hover {
     text-align: center;
     padding: 6em 1em;
     margin-bottom: 2em;
+    position: relative;
 }
 
 .hero h2 {
     margin: 0;
     font-size: 2.5em;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
