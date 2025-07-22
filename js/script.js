@@ -138,3 +138,38 @@ function applyTheme() {
         if (themeToggle) themeToggle.textContent = '🌙';
     }
 }
+const quotes = [
+    "Polityk – osoba, która potrafi godzinami mówić bez powiedzenia czegokolwiek istotnego.",
+    "Urlop to czas, gdy odpoczywasz tak intensywnie, że potrzebujesz kolejnego urlopu.",
+    "W Polsce rzeczy niemożliwe załatwiam od ręki, na cuda trzeba chwilę poczekać.",
+    "Najlepsze dowcipy pisze samo życie."
+];
+
+function displayRandomQuote() {
+    const el = document.getElementById('cytatDnia');
+    if (!el) return;
+    const q = quotes[Math.floor(Math.random() * quotes.length)];
+    el.textContent = q;
+}
+
+function filterEvents(category) {
+    document.querySelectorAll('#kalendarz li').forEach(li => {
+        if (category === 'all' || li.dataset.category === category) {
+            li.style.display = 'list-item';
+        } else {
+            li.style.display = 'none';
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('quoteBtn');
+    if (btn) {
+        btn.addEventListener('click', displayRandomQuote);
+        displayRandomQuote();
+    }
+    filterEvents("all");
+    document.querySelectorAll('.filters button').forEach(b => {
+        b.addEventListener('click', () => filterEvents(b.dataset.filter));
+    });
+});

@@ -272,3 +272,17 @@ body.dark .hero::after {
         transform: scale(1.1);
     }
 }
+
+.stats { display:flex; justify-content:center; gap:2em; margin:2em 0; }
+.stats div { text-align:center; }
+.stats strong { display:block; font-size:2em; color:#3f87a6; }
+body.dark .stats strong { color:#ffdd57; }
+
+.timeline { list-style:none; padding:0; }
+.timeline li { margin:0.5em 0; position:relative; padding-left:4em; }
+.timeline .year { position:absolute; left:0; top:0; font-weight:bold; color:#3f87a6; }
+body.dark .timeline .year { color:#ffdd57; }
+
+.filters { text-align:center; margin-bottom:1em; }
+.filters button { margin:0 0.5em; padding:0.4em 1em; }
+

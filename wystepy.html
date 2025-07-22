@@ -32,10 +32,15 @@
         <section id="kalendarz" contenteditable="false">
             <h2>Kalendarz wystepow</h2>
             <p>Tutaj znajdziesz daty przyszlych i archiwalnych wystepow.</p>
+            <div class="filters">
+                <button data-filter="all">Wszystkie</button>
+                <button data-filter="koncert">Koncerty</button>
+                <button data-filter="spotkanie">Spotkania</button>
+            </div>
             <ul>
-                <li>5 września 2025 – Teatr Muzyczny, Gdynia</li>
-                <li>20 października 2025 – Aula UAM, Poznań</li>
-                <li>12 listopada 2025 – Klub Hybrydy, Warszawa</li>
+                <li data-category="spotkanie">5 września 2025 – Teatr Muzyczny, Gdynia</li>
+                <li data-category="koncert">20 października 2025 – Aula UAM, Poznań</li>
+                <li data-category="koncert">12 listopada 2025 – Klub Hybrydy, Warszawa</li>
             </ul>
         </section>
     </main>
